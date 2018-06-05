@@ -3,7 +3,7 @@ from selenium import webdriver
 
 class Topic_01_CheckEnv(unittest.TestCase):
     def setUp(self):
-        self.driver = webdriver.Chrome()
+        self.driver = webdriver.Ie(executable_path=".\\driver\\chromedriver.exe")
 
     def test_01_VerifyTitle(self):
         driver = self.driver

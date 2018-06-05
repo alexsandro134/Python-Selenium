@@ -3,7 +3,7 @@ from selenium import webdriver
 
 class Topic_03_WebDriverElement(unittest.TestCase):
     def setUp(self):
-        self.driver = webdriver.Chrome()
+        self.driver = webdriver.Ie(executable_path=".\\driver\\chromedriver.exe")
 
     def test_03_VerifyEnableDisable(self):
         driver = self.driver

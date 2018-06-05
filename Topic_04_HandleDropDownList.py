@@ -27,16 +27,13 @@ class Topic_04_DropDownList(unittest.TestCase):
         
         jobRole01.select_by_visible_text("Automation Tester")
         self.assertEqual(jobRole01.first_selected_option.text, "Automation Tester")
-        time.sleep(2)
 
         jobRole01.select_by_value("manual")
         self.assertEqual(jobRole01.first_selected_option.text, "Manual Tester")
-        time.sleep(2)
 
         jobRole01.select_by_index(3)
         self.assertEqual(jobRole01.first_selected_option.text, "Mobile Tester")
-        time.sleep(2)
-        
+
         self.assertEqual(len(jobRole01.options), 5) 
 
     def test_02_HandleTextboxArea(self):

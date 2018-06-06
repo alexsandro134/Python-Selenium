@@ -1,9 +1,9 @@
-1528188552681	geckodriver	INFO	geckodriver 0.18.0
-1528188552687	geckodriver	INFO	Listening on 127.0.0.1:57708
-1528188554769	geckodriver::marionette	INFO	Starting browser C:\Program Files (x86)\Mozilla Firefox\firefox.exe with args ["-marionette"]
-1528188556670	Marionette	INFO	Listening on port 57718
-1528188556816	Marionette	WARN	TLS certificate errors will be ignored for this session
-JavaScript error: http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js, line 6: Error: `selector` option must be specified when initializing tooltip on the window.document object!
-[Child 11172] ###!!! ABORT: Aborting on channel error.: file c:/builds/moz2_slave/m-rel-w32-00000000000000000000/build/src/ipc/glue/MessageChannel.cpp, line 2143
-0000000000/build/src/ipc/glue/MessageChannel.cpp, line 2143
-
+1528274106313	geckodriver	INFO	geckodriver 0.18.0
+1528274106319	geckodriver	INFO	Listening on 127.0.0.1:63620
+1528274108436	geckodriver::marionette	INFO	Starting browser C:\Program Files (x86)\Mozilla Firefox\firefox.exe with args ["-marionette"]
+1528274110457	Marionette	INFO	Listening on port 63628
+1528274111888	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: https://www.hdfcbank.com/assets/scripts/screen-takeover.js, line 1: SyntaxError: unterminated comment
+[Child 6652] ###!!! ABORT: Aborting on channel error.: file c:/builds/moz2_slave/m-rel-w32-00000000000000000000/build/src/ipc/glue/MessageChannel.cpp, line 2143
+345
+[Child 7476] WARNING: pipe error: 109: file c:/builds/moz2_slave/m-rel-w32-00000000000000000000/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 345

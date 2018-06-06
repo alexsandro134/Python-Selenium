@@ -6,7 +6,7 @@ from selenium import webdriver
 from selenium.webdriver.support.ui import Select
 
 class Topic_04_DropDownList(unittest.TestCase):
-    # name = "Tai Le"
+    name = "Tai Le"
     # dob = "11/05/1991"
     # address = "Xuan Thuy"
     # city = "Ha Noi"
@@ -14,7 +14,7 @@ class Topic_04_DropDownList(unittest.TestCase):
     # pin = "123457"
     # telephone = "0123456789"
     # password = "98764311"
-    
+
     def setUp(self):
         self.driver = webdriver.Ie(executable_path=".\\driver\\chromedriver.exe")
         

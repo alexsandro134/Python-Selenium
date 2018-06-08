@@ -5,16 +5,20 @@ import string
 from selenium import webdriver
 from selenium.webdriver.support.ui import Select
 
-class Topic_04_DropDownList(unittest.TestCase):
-    # name = "Tai Le"
-    # dob = "11/05/1991"
-    # address = "Xuan Thuy"
-    # city = "Ha Noi"
-    # state = "Cau Giay"
-    # pin = "123457"
-    # telephone = "0123456789"
-    # password = "98764311"
+name = "Tai Le"
+dob = "11/05/1991"
+address = "Xuan Thuy"
+city = "Ha Noi"
+state = "Cau Giay"
+pin = "123457"
+telephone = "0123456789"
+password = "98764311"
 
+def email_generator(size=5, chars=string.ascii_letters + string.digits):
+        return ''.join(random.choice(chars) for _ in range(size)) + '@' + random.choice(chars) + '.com'
+
+class Topic_04_DropDownList(unittest.TestCase):
+    
     def setUp(self):
         self.driver = webdriver.Ie(executable_path=".\\driver\\chromedriver.exe")
         
@@ -48,19 +52,19 @@ class Topic_04_DropDownList(unittest.TestCase):
         self.assertTrue(driver.find_element_by_xpath("//marquee").is_displayed())
 
         driver.find_element_by_xpath("//a[text()='New Customer']").click()
-        driver.find_element_by_xpath("//input[@name='name']").send_keys("Tai Le")
+        driver.find_element_by_xpath("//input[@name='name']").send_keys(name)
         driver.find_element_by_xpath("//input[@value='m']").click()
 
         driver.execute_script("arguments[0].removeAttribute('type')", driver.find_element_by_xpath("//input[@id='dob']"))
 
-        driver.find_element_by_xpath("//input[@id='dob']").send_keys("11/05/1991")
-        driver.find_element_by_xpath("//textarea[@name='addr']").send_keys("Xuan Thuy")
-        driver.find_element_by_xpath("//input[@name='city']").send_keys("Ha Noi")
-        driver.find_element_by_xpath("//input[@name='state']").send_keys("Cau Giay")
-        driver.find_element_by_xpath("//input[@name='pinno']").send_keys("1234567")
-        driver.find_element_by_xpath("//input[@name='telephoneno']").send_keys("0123456789")
+        driver.find_element_by_xpath("//input[@id='dob']").send_keys(dob)
+        driver.find_element_by_xpath("//textarea[@name='addr']").send_keys(address)
+        driver.find_element_by_xpath("//input[@name='city']").send_keys(city)
+        driver.find_element_by_xpath("//input[@name='state']").send_keys(state)
+        driver.find_element_by_xpath("//input[@name='pinno']").send_keys(pin)
+        driver.find_element_by_xpath("//input[@name='telephoneno']").send_keys(telephone)
         driver.find_element_by_xpath("//input[@name='emailid']").send_keys(email_generator())
-        driver.find_element_by_xpath("//input[@name='password']").send_keys("98764311")
+        driver.find_element_by_xpath("//input[@name='password']").send_keys(password)
 
         driver.find_element_by_xpath("//input[@name='sub']").click()
 
@@ -72,15 +76,11 @@ class Topic_04_DropDownList(unittest.TestCase):
         driver.find_element_by_xpath("//input[@name='cusid']").send_keys(customerId)
         driver.find_element_by_xpath("//input[@type='submit']").click()
 
-        self.assertEqual(driver.find_element_by_xpath("//input[@name='name']").get_attribute("value"), "Tai Le")
-        self.assertEqual(driver.find_element_by_xpath("//textarea[@name='addr']").text, "Xuan Thuy")
+        self.assertEqual(driver.find_element_by_xpath("//input[@name='name']").get_attribute("value"), name)
+        self.assertEqual(driver.find_element_by_xpath("//textarea[@name='addr']").text, address)
 
     def tearDown(self):
         self.driver.close()
 
-def email_generator(size=5, chars=string.ascii_letters + string.digits):
-    return ''.join(random.choice(chars) for _ in range(size)) + '@' + random.choice(chars) + '.com'
-
 if __name__ == "__main__":
     unittest.main()
-

@@ -1,9 +1,9 @@
 from selenium import webdriver
 
 class CommonsVerify(object):
-    def __init__(self, browser):
-        if (browser == "chrome"):
-            self.driver = webdriver.Chrome()
+    # def __init__(self, browser):
+    #     if (browser == "chrome"):
+    #         self.driver = webdriver.Chrome(executable_path=".\\driver\\chromedriver.exe")
 
     def isElementDisplayed(self, xpathName):
         driver = self.driver
